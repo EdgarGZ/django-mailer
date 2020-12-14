@@ -1,0 +1,1 @@
+web: gunicorn mailer.wsgi --pythonpath=mailer --log-file -
