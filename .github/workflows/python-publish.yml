@@ -9,6 +9,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      EMAIL_HOST: ${{ secrets.EMAIL_HOST }}
+      EMAIL_HOST_PASSWORD: ${{ secrets.EMAIL_HOST_PASSWORD }}
     steps:
     - uses: actions/checkout@v1
     - name: Set up Python 3.7
@@ -24,5 +27,4 @@ jobs:
         python manage.py migrate
     - name: Run tests
       run: |
-        cd mailer
         python manage.py test
