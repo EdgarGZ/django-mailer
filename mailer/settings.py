@@ -32,6 +32,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     'https://zego.gitlab.io/zego/',
     'https://django-rest-mailer.herokuapp.com/'
+    '*'
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
