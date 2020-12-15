@@ -41,6 +41,8 @@ class SendMailAPIView(APIView):
                 )
                 return Response(data={'success': True, 'message': 'Message sent successfully'}, status=status.HTTP_200_OK)
             except Exception as e:
+                print(e)
                 return Response(data={'success': False, 'message': 'Mail wasn\'t sent'}, status=status.HTTP_400_BAD_REQUEST)
 
+        print(mail_serializer.erros)
         return Response(data={'success': False, 'message': 'Invalid data'}, status=status.HTTP_400_BAD_REQUEST)
